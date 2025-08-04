@@ -14,8 +14,8 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors({
   origin: '*', // Allow all origins
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow all standard methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Adjust as needed
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'], // 👈 Add PATCH here
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 app.use(express.json({ limit: '10mb' })); 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
